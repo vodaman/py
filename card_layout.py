@@ -48,3 +48,47 @@ layout_res.addWidget(lb_Result, alignment=(Qt.AlignLeft | Qt.AlignTop))
 layout_res.addWidget(lb_Correct, alignment=(Qt.AlignLeft | Qt.AlignTop), stretch=2)
 ans_group_box.setLayout(layout_res)
 ans_group_box.hide()
+
+layout_line1 = QHBoxLayout()
+layout_line2 = QHBoxLayout()
+layout_line3 = QHBoxLayout()
+layout_line4 = QHBoxLayout()
+
+layout_line1.addWidget(btn_menu)
+layout_line1.addStretch(1)
+layout_line1.addWidget(btn_sleep)
+layout_line1.addWidget(box_minutes)
+layout_line1.addWidget(QLabel('min'))
+
+layout_line2.addWidget(lb_Question, alignment=(Qt.AlignHCenter | Qt.AlignVCenter))
+layout_line3.addWidget(radio_group_box)
+layout_line3.addWidget(ans_group_box)
+
+layout_line4.addStretch(1)
+layout_line4.addWidget(btn_OK, stretch=2)
+layout_line4.addStretch(1)
+
+layout_card = QVBoxLayout()
+layout_card.addLayout(layout_line1, stretch=1)
+layout_card.addLayout(layout_line2, stretch=2)
+layout_card.addLayout(layout_line3, stretch=8)
+layout_card.addStretch(1)
+layout_card.addLayout(layout_line4, stretch=1)
+layout_card.addStretch(1)
+layout_card.setSpacing(5)
+
+def show_result():
+    radio_group_box.hide()
+    ans_group_box.show()
+    btn_OK.setText('Next question')
+
+def show_result():
+    radio_group_box.show()
+    ans_group_box.hide()
+    btn_OK.setText('Answer')
+    radio_group.setExclusive(False)
+    rbtn_2.setChecked(False)
+    rbtn_2.setChecked(False)
+    rbtn_3.setChecked(False)
+    rbtn_4.setChecked(False)
+    radio_group.setExclusive(True)
